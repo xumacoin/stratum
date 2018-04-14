@@ -1,0 +1,5 @@
+*.o
+*.a
+stratum
+blocknotify
+config
