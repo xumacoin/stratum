@@ -40,4 +40,13 @@ Add this to your stratum source code and rebuild/deploy.
 	// Xuma //
 ````
 
-NOTE: Requires version 1.1.0+ of xumad.
+Add this to your `yaamp/core/backend/coins.php` file by matching the first existing line in your file and adding the remaining two lines.
+
+````
+	$coin->reward = $template['coinbasevalue']/100000000*$coin->reward_mul;
+
+	if($coin->symbol == 'XMX' && isset($template['developerfee_amount']))
+		$coin->reward -= $template['developerfee_amount']/100000000;
+````
+
+NOTE: Requires version 1.1.2+ of xumad.
